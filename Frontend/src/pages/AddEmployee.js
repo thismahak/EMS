@@ -1,6 +1,6 @@
 // src/pages/AddEmployee.js
 import React, { useState } from 'react';
-import axios from 'axios';
+import API from '../api'; // Adjust the import path as necessary
 import { useNavigate } from 'react-router-dom';
 import './AddEmployee.css';
 
