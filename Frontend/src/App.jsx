@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState , useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link , Navigate} from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import AddEmployee from './pages/AddEmployee';
 import EditEmployee from './pages/EditEmployee';
@@ -65,6 +65,8 @@ function App() {
           {/* Main Content */}
           <main className="content-area">
             <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
+
               {/* Public Route */}
               <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
 
