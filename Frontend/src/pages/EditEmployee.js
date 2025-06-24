@@ -1,6 +1,6 @@
 // src/pages/EditEmployee.js
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import API from '../api';
 import { useParams, useNavigate } from 'react-router-dom';
 import './EditEmployee.css';
 
@@ -24,7 +24,7 @@ const EditEmployee = () => {
           setError('No token found, please log in again.');
           return;
         }
-        const response = await axios.get(`http://localhost:5000/api/employees/${id}` , 
+        const response = await API.get(`/employees/${id}` , 
           {
             headers: {
               Authorization: `Bearer ${token}`, // Send token in the Authorization header
@@ -64,14 +64,14 @@ const EditEmployee = () => {
     return;
   }
     try {
-      const response = await axios.put(`http://localhost:5000/api/employees/update/${id}`, employeeData , 
+      const response = await API.put(`/employees/update/${id}`, employeeData , 
         {
           headers: {
             Authorization: `Bearer ${token}`, // Send token in the Authorization header
           },
         }
       );
-      if(response.status == 200){
+      if(response.status === 200){
         alert('Employee details updated successfully!')
         navigate('/dashboard');
       }

@@ -42,8 +42,8 @@ const AddEmployee = () => {
     }
     setIsLoading(true);
     try {
-      const response = await axios.post(
-        'http://localhost:5000/api/employees/create',
+      const response = await API.post(
+        '/employees/create',
         employeeData,
         {
           headers: {

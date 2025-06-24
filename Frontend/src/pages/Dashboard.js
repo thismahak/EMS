@@ -1,6 +1,6 @@
 // src/pages/Dashboard.js
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import API from '../api'; // Import the API instance
 import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 
@@ -20,7 +20,7 @@ const Dashboard = () => {
           return;
         }
 
-        const response = await axios.get('http://localhost:5000/api/employees', {
+        const response = await API.get('/employees', {
           headers: {
             Authorization: `Bearer ${token}`, // Send token in the Authorization header
           },
@@ -49,7 +49,7 @@ const Dashboard = () => {
       return;
     }
       try {
-        const response = await axios.delete(`http://localhost:5000/api/employees/delete/${id}` , 
+        const response = await API.delete(`/employees/delete/${id}` , 
           {
             headers: {
               Authorization: `Bearer ${token}`, // Send token in the Authorization header

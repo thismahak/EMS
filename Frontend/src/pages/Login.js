@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import axios from 'axios';
+import API from '../api';
 import './Login.css';
 
 const Login = ({setIsLoggedIn}) => {
@@ -23,7 +23,7 @@ const Login = ({setIsLoggedIn}) => {
   const handleLogin = async (values) => {
     try {
       // Send login data to the backend
-      const response = await axios.post('http://localhost:5000/api/admin/login', values);
+      const response = await API.post('/admin/login', values);
       console.log('Response:', response); // Log the response from the backend
   
       // Check if the token is returned
