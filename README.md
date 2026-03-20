@@ -197,5 +197,3 @@ GitHub: [https://github.com/thismahak](https://github.com/thismahak)
 If you like this project, consider giving it a ⭐ on GitHub.
 
 ```
-
-[1]: https://github.com/thismahak/EMS "GitHub - thismahak/EMS · GitHub"
