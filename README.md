@@ -10,7 +10,7 @@ The project is structured with separate **Frontend** and **Backend** folders for
 ## 🚀 Live Demo
 
 **Frontend (Vercel):**  
-https://ems-xi-five.vercel.app
+https://ems-coral.vercel.app/login
 
 **Backend API (Render):**  
 https://ems-backend-mx5c.onrender.com
